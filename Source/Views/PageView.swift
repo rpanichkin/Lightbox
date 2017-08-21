@@ -127,8 +127,8 @@ class PageView: UIScrollView {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    activityIndicator.center = imageView.center
-    playButton.center = imageView.center
+    activityIndicator.center = CGPoint(x: bounds.width * 0.5, y: bounds.height * 0.5)
+    playButton.center = CGPoint(x: bounds.width * 0.5, y: bounds.height * 0.5)
   }
 
   func configureImageView() {
