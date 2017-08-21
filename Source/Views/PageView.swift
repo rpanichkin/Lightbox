@@ -33,7 +33,7 @@ class PageView: UIScrollView {
     return button
   }()
 
-  lazy var activityIndicator: LoadingIndicator = LoadingIndicator()
+  lazy var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
 
   var image: LightboxImage
   var contentFrame = CGRect.zero
@@ -50,7 +50,8 @@ class PageView: UIScrollView {
     super.init(frame: CGRect.zero)
 
     configure()
-
+    
+    activityIndicator.startAnimating()
     activityIndicator.alpha = 1
     self.image.addImageTo(imageView) { [weak self] image in
       guard let strongSelf = self else {
